@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naomi's Nails Salon — Family-Owned Nail Care with a Personal Touch</title>
+  <meta name="description" content="Led by Naomi and her mother Blanca, this family-owned salon is dedicated to meticulous attention to detail and a welcoming atmosphere. From gel manicures to stunning nail art, every client is treated like family.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #7c3aed;
+      --primary-dark: #6d28d9;
+      --accent: #c4b5fd;
+      --bg: #f5f3ff;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #a78bfa 100%);
+      color: white;
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+      animation: shimmer 8s ease-in-out infinite alternate;
+    }
+    @keyframes shimmer {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(30px, 20px); }
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .hero-emoji { font-size: 48px; margin-bottom: 16px; display: block; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .hero .tagline {
+      font-size: clamp(16px, 2.5vw, 20px);
+      opacity: 0.9;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+    .hero .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .hero .rating-badge .stars { color: #fbbf24; letter-spacing: 1px; }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      background: white;
+      color: var(--primary-dark);
+      padding: 14px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+    /* NAV */
+    nav {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 14px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    nav a {
+      color: #475569;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--primary); }
+
+    /* SECTIONS */
+    section { padding: 64px 24px; max-width: 900px; margin: 0 auto; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+    .section-subtitle {
+      color: #64748b;
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+
+    /* ABOUT */
+    .about-text {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #334155;
+      max-width: 680px;
+    }
+
+    /* SERVICES */
+    #services { background: var(--bg); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .service-card {
+      background: white;
+      padding: 18px 20px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+      font-size: 15px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .service-icon { font-size: 20px; }
+
+    /* HOURS */
+    .hours-table { border-collapse: collapse; width: 100%; max-width: 420px; }
+    .hours-table tr { border-bottom: 1px solid #f1f5f9; }
+    .hours-table td { padding: 12px 0; font-size: 15px; }
+    .hours-table .day { font-weight: 600; color: #0f172a; width: 120px; }
+    .hours-table .time { color: #475569; }
+
+    /* CONTACT */
+    #contact { background: var(--bg); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .contact-card {
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .contact-card h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; margin-bottom: 8px; }
+    .contact-card p { font-size: 16px; color: #1e293b; }
+    .contact-card a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* MAP */
+    .map-container {
+      width: 100%;
+      height: 300px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .map-container iframe { width: 100%; height: 100%; border: 0; }
+
+    /* FOOTER */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+    }
+    footer .biz-name { color: white; font-weight: 700; }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      .hero { padding: 60px 20px 48px; }
+      section { padding: 48px 20px; }
+      nav { gap: 20px; flex-wrap: wrap; }
+      nav a { font-size: 12px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <span class="hero-emoji">✨</span>
+      <h1>Naomi's Nails Salon</h1>
+      <p class="tagline">Family-Owned Nail Care with a Personal Touch</p>
+      <div class="rating-badge">
+        <span class="stars">★★★★½ 4.8</span>
+        <span>54 reviews on Google</span>
+      </div>
+      <br>
+      <a href="tel:2033179291" class="hero-cta">📞 Call (203) 317-9291</a>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#hours">Hours</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p class="about-text">Led by Naomi and her mother Blanca, this family-owned salon is dedicated to meticulous attention to detail and a welcoming atmosphere. From gel manicures to stunning nail art, every client is treated like family.</p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2 class="section-title">Services</h2>
+    <p class="section-subtitle">What we're known for</p>
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">💅</span><span>Gel Manicure</span></div>
+            <div class="service-card"><span class="service-icon">💅</span><span>Gel X Nails</span></div>
+            <div class="service-card"><span class="service-icon">💅</span><span>Acrylic Full Set</span></div>
+            <div class="service-card"><span class="service-icon">💅</span><span>Dip Powder Nails</span></div>
+            <div class="service-card"><span class="service-icon">💅</span><span>Pedicure</span></div>
+            <div class="service-card"><span class="service-icon">💅</span><span>Nail Art &amp; Design</span></div>
+            <div class="service-card"><span class="service-icon">💅</span><span>Liquid Gel</span></div>
+    </div>
+  </section>
+
+  <!-- HOURS -->
+  <section id="hours">
+    <h2 class="section-title">Hours</h2>
+    <p class="section-subtitle">Plan your visit</p>
+    <table class="hours-table">
+      <tr><td class="day">Monday</td><td class="time">Closed</td></tr>
+              <tr><td class="day">Tue–Fri</td><td class="time">9:30 AM – 6:00 PM</td></tr>
+              <tr><td class="day">Saturday</td><td class="time">9:00 AM – 4:00 PM</td></tr>
+              <tr><td class="day">Sunday</td><td class="time">Closed</td></tr>
+    </table>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-subtitle">We'd love to hear from you</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Address</h3>
+        <p>209 Center St, Wallingford, CT 06492</p>
+      </div>
+      <div class="contact-card">
+        <h3>Phone</h3>
+        <p><a href="tel:2033179291">(203) 317-9291</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>Visit Us</h3>
+        <p>Walk-ins welcome! Give us a call for more info.</p>
+      </div>
+    </div>
+    <div class="map-container">
+      <iframe
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Naomi's%20Nails%20Salon%2C%20209%20Center%20St%2C%20Wallingford%2C%20CT%2006492"
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><span class="biz-name">Naomi's Nails Salon</span> · 209 Center St, Wallingford, CT 06492 · (203) 317-9291</p>
+    <p style="margin-top:8px">&copy; 2026 Naomi's Nails Salon. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+[
+  {
+    "slug": "little-charm-eatery",
+    "name": "Little Charm Eatery",
+    "tagline": "Fresh Thai Cuisine with a Modern Touch",
+    "type": "restaurant",
+    "description": "Little Charm Eatery specializes in fresh, made-to-order Thai cuisine with a modern twist. Enjoy generous portions, friendly service, and a welcoming atmosphere for dine-in and takeout in the heart of Wallingford.",
+    "address": "900 N Colony Rd, Wallingford, CT 06492",
+    "phone": "(203) 269-0826",
+    "hours": {
+      "Mon–Thu": "11:00 AM – 2:30 PM, 4:00 PM – 9:00 PM",
+      "Friday": "11:00 AM – 2:30 PM, 4:00 PM – 10:00 PM",
+      "Saturday": "12:00 PM – 10:00 PM",
+      "Sunday": "12:00 PM – 9:00 PM"
+    },
+    "services": ["Pho & Ramen", "Stir-Fry Entrées", "Curry Dishes", "Ginger Crispy Duck", "Mango Crispy Chicken", "Salmon & Shrimp Red Curry", "Appetizers & Sides"],
+    "servicesLabel": "Popular Dishes",
+    "rating": 4.9,
+    "reviews": 225,
+    "colors": { "primary": "#d97706", "primaryDark": "#b45309", "accent": "#fbbf24", "bg": "#fffbeb", "heroBg": "linear-gradient(135deg, #78350f 0%, #d97706 100%)" }
+  },
+  {
+    "slug": "lennys-cafe",
+    "name": "Lenny's Cafe",
+    "tagline": "Wallingford's Neighborhood Bar Since 1979",
+    "type": "bar-restaurant",
+    "description": "Established in 1979, Lenny's Cafe is a longtime staple on Wallingford's Center Street. A go-to spot for sports fans with multiple screens, cold drinks, and great bar food including personal Zuppardi's pizzas.",
+    "address": "64 Center St, Wallingford, CT 06492",
+    "phone": "(203) 626-9186",
+    "hours": {
+      "Mon–Wed": "5:00 PM – 12:45 AM",
+      "Thursday": "3:00 PM – 12:45 AM",
+      "Friday": "3:00 PM – 1:30 AM",
+      "Saturday": "2:00 PM – 1:30 AM",
+      "Sunday": "2:00 PM – 11:00 PM"
+    },
+    "services": ["Zuppardi's Personal Pizzas", "Classic Bar Food", "Draft & Craft Beers", "Full Cocktail Menu", "Live Sports on Multiple Screens"],
+    "servicesLabel": "What We Offer",
+    "rating": 4.6,
+    "reviews": 63,
+    "colors": { "primary": "#1e3a5f", "primaryDark": "#0f2744", "accent": "#f59e0b", "bg": "#f0f4f8", "heroBg": "linear-gradient(135deg, #0f2744 0%, #1e3a5f 50%, #2d4a6f 100%)" }
+  },
+  {
+    "slug": "central-barber-shop",
+    "name": "Central Barber Shop",
+    "tagline": "Wallingford's Trusted Barber Since 1958",
+    "type": "barber",
+    "description": "A Wallingford institution since 1958, Central Barber Shop delivers expert cuts, straight razor shaves, and old-school professionalism. Walk-ins welcome, conveniently located on Center Street.",
+    "address": "88 Center St, Wallingford, CT 06492",
+    "phone": "(203) 709-0533",
+    "hours": {
+      "Monday": "Closed",
+      "Tue–Fri": "7:30 AM – 5:00 PM",
+      "Saturday": "7:00 AM – 1:00 PM",
+      "Sunday": "Closed"
+    },
+    "services": ["Men's Haircuts", "Straight Razor Shaves", "Fade Haircuts", "Line-Ups", "Beard Trims"],
+    "servicesLabel": "Services",
+    "rating": 4.7,
+    "reviews": 81,
+    "colors": { "primary": "#991b1b", "primaryDark": "#7f1d1d", "accent": "#c9a96e", "bg": "#faf5f0", "heroBg": "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)" }
+  },
+  {
+    "slug": "american-muffler-brake",
+    "name": "American Muffler & Brake Shop",
+    "tagline": "Honest Auto Repair You Can Trust",
+    "type": "auto-repair",
+    "description": "American Muffler & Brake Shop has been keeping Wallingford's cars running with expert exhaust, brake, and general repair services. Known for honest pricing, fast turnarounds, and skilled technicians Kevin & Larry who stand behind every job.",
+    "address": "219 N Colony St, Wallingford, CT 06492",
+    "phone": "(203) 284-0861",
+    "hours": {
+      "Mon–Fri": "8:00 AM – 5:00 PM",
+      "Saturday": "8:00 AM – 12:00 PM",
+      "Sunday": "Closed"
+    },
+    "services": ["Muffler & Exhaust Repair", "Brake Service & Repair", "Oil Changes", "Custom Exhaust Work", "Catalytic Converter Service", "General Car Repair", "Roadside Assistance"],
+    "servicesLabel": "Services",
+    "rating": 4.6,
+    "reviews": 107,
+    "colors": { "primary": "#dc2626", "primaryDark": "#b91c1c", "accent": "#fbbf24", "bg": "#fff7ed", "heroBg": "linear-gradient(135deg, #1c1917 0%, #292524 50%, #44403c 100%)" }
+  },
+  {
+    "slug": "gen-x-motors",
+    "name": "Gen X Motors",
+    "tagline": "European Car Specialists · Honest, Reliable Repair",
+    "type": "auto-repair",
+    "description": "Owners Erik and John bring decades of experience specializing in European vehicles — VW, Volvo, Mercedes, Acura, and Ford. From basic fluid service to major engine and suspension repairs, Gen X Motors is known for honesty, professionalism, and fair pricing.",
+    "address": "156 Dudley Ave, Wallingford, CT 06492",
+    "phone": "(203) 678-4691",
+    "hours": {
+      "Mon–Fri": "9:00 AM – 5:00 PM",
+      "Saturday": "Closed",
+      "Sunday": "Closed"
+    },
+    "services": ["European Car Specialist", "Engine Repair & Diagnostics", "Suspension Repair", "Fluid Service & Maintenance", "Brake Service", "General Automotive Repair"],
+    "servicesLabel": "Services",
+    "rating": 4.9,
+    "reviews": 71,
+    "colors": { "primary": "#1d4ed8", "primaryDark": "#1e40af", "accent": "#60a5fa", "bg": "#eff6ff", "heroBg": "linear-gradient(135deg, #0c0a09 0%, #1c1917 50%, #292524 100%)" }
+  },
+  {
+    "slug": "azteca-bakery",
+    "name": "The Azteca Bakery",
+    "tagline": "Authentic Mexican Bread & Pastries",
+    "type": "bakery",
+    "description": "Azteca Bakery brings the flavors of Mexico to Wallingford with authentic bread, pastries, and cakes crafted with care. From fresh conchas to signature tres leches cake, every visit is a treat for the senses.",
+    "address": "23 S Colony St, Wallingford, CT 06492",
+    "phone": "(203) 303-1327",
+    "hours": {
+      "Daily": "7:00 AM – 8:00 PM"
+    },
+    "services": ["Conchas & Mexican Sweet Bread", "Tres Leches Cake", "Guava & Cheese Pastries", "Chocolate Croissants", "Apple Turnovers", "Custom Decorated Cakes", "Ice Cream & Paletas"],
+    "servicesLabel": "Our Specialties",
+    "rating": 4.2,
+    "reviews": 76,
+    "colors": { "primary": "#be185d", "primaryDark": "#9d174d", "accent": "#f472b6", "bg": "#fdf2f8", "heroBg": "linear-gradient(135deg, #831843 0%, #be185d 50%, #e11d48 100%)" }
+  },
+  {
+    "slug": "naomis-nails",
+    "name": "Naomi's Nails Salon",
+    "tagline": "Family-Owned Nail Care with a Personal Touch",
+    "type": "nail-salon",
+    "description": "Led by Naomi and her mother Blanca, this family-owned salon is dedicated to meticulous attention to detail and a welcoming atmosphere. From gel manicures to stunning nail art, every client is treated like family.",
+    "address": "209 Center St, Wallingford, CT 06492",
+    "phone": "(203) 317-9291",
+    "hours": {
+      "Monday": "Closed",
+      "Tue–Fri": "9:30 AM – 6:00 PM",
+      "Saturday": "9:00 AM – 4:00 PM",
+      "Sunday": "Closed"
+    },
+    "services": ["Gel Manicure", "Gel X Nails", "Acrylic Full Set", "Dip Powder Nails", "Pedicure", "Nail Art & Design", "Liquid Gel"],
+    "servicesLabel": "Services",
+    "rating": 4.8,
+    "reviews": 54,
+    "colors": { "primary": "#7c3aed", "primaryDark": "#6d28d9", "accent": "#c4b5fd", "bg": "#f5f3ff", "heroBg": "linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #a78bfa 100%)" }
+  },
+  {
+    "slug": "rainbow-nail-spa",
+    "name": "Rainbow Nail & Spa",
+    "tagline": "Nails, Spa & Relaxation — Walk-Ins Welcome",
+    "type": "nail-salon",
+    "description": "Rainbow Nail & Spa offers a full range of nail care and spa services in a clean, relaxing environment. Walk-ins are always welcome. Treat yourself to a manicure, pedicure, or soothing massage any day of the week.",
+    "address": "665 N Colony Rd, Wallingford, CT 06492",
+    "phone": "(203) 741-9516",
+    "hours": {
+      "Mon–Fri": "9:30 AM – 7:00 PM",
+      "Sat–Sun": "9:30 AM – 6:00 PM"
+    },
+    "services": ["Manicures", "Spa Pedicures", "Gel Manicures", "Nail Art & Design", "Massage Services", "Walk-Ins Welcome"],
+    "servicesLabel": "Services",
+    "rating": 4.8,
+    "reviews": 80,
+    "colors": { "primary": "#0d9488", "primaryDark": "#0f766e", "accent": "#5eead4", "bg": "#f0fdfa", "heroBg": "linear-gradient(135deg, #134e4a 0%, #0d9488 50%, #14b8a6 100%)" }
+  },
+  {
+    "slug": "ocean-nail-spa",
+    "name": "Ocean Nail Spa",
+    "tagline": "Your Oasis for Beautiful Nails",
+    "type": "nail-salon",
+    "description": "Ocean Nail Spa provides a clean, relaxing experience with expert nail technicians. From classic manicures and pedicures to gel and acrylic nails, we deliver quality nail care with a personal touch. Walk-ins and appointments welcome.",
+    "address": "970 N Colony Rd, Wallingford, CT 06492",
+    "phone": "(203) 265-3077",
+    "hours": {
+      "Mon–Sat": "9:15 AM – 7:15 PM",
+      "Sunday": "10:00 AM – 6:00 PM"
+    },
+    "services": ["Manicures & Pedicures", "Gel Nails", "Acrylic Nails", "Spa Treatments", "Foot Massage", "Walk-Ins & Appointments"],
+    "servicesLabel": "Services",
+    "rating": 4.8,
+    "reviews": 72,
+    "colors": { "primary": "#0369a1", "primaryDark": "#075985", "accent": "#38bdf8", "bg": "#f0f9ff", "heroBg": "linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0284c7 100%)" }
+  }
+]
