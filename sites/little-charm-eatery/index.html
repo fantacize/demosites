@@ -74,6 +74,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(10, 9, 8, 0.85) 0%, rgba(10, 9, 8, 0.4) 70%, transparent 100%);
       transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
     }
 
@@ -94,35 +95,6 @@
       transition: opacity 0.2s;
     }
     .nav-logo:hover { opacity: 0.8; }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.25s;
-      cursor: pointer;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: width 0.3s ease;
-    }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-links a:hover::after { width: 100%; }
 
     .nav-right {
       display: flex;
@@ -178,15 +150,6 @@
       color: var(--bg);
       box-shadow: 0 0 24px rgba(201, 169, 110, 0.2);
     }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-
     /* ═══════════════════════════════════════
        HERO
     ═══════════════════════════════════════ */
@@ -1043,40 +1006,7 @@
     }
 
     @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .nav-toggle { display: block; }
       .open-badge { display: none; }
-
-      .nav-mobile {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(10, 9, 8, 0.98);
-        backdrop-filter: blur(32px);
-        z-index: 99;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 28px;
-      }
-      .nav-mobile.open { display: flex; }
-      .nav-mobile a {
-        color: var(--text);
-        text-decoration: none;
-        font-family: var(--serif);
-        font-size: 32px;
-        font-weight: 300;
-        transition: color 0.2s;
-      }
-      .nav-mobile a:hover { color: var(--gold); }
-      .nav-mobile-close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: none;
-        border: none;
-        cursor: pointer;
-      }
 
       .hero-badge { display: none; }
       .scroll-cue { display: none; }
@@ -1181,7 +1111,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#favorites">Menu</a></li>
+      <li><a href="menu.html">Menu</a></li>
       <li><a href="#hours">Hours</a></li>
     </ul>
     <div class="nav-right">
@@ -1206,9 +1136,9 @@
     </button>
     <a href="#about" onclick="this.parentElement.classList.remove('open')">About</a>
     <a href="#gallery" onclick="this.parentElement.classList.remove('open')">Gallery</a>
-    <a href="#favorites" onclick="this.parentElement.classList.remove('open')">Menu</a>
+    <a href="menu.html">Menu</a>
     <a href="#hours" onclick="this.parentElement.classList.remove('open')">Hours</a>
-    <a href="tel:2032690826" onclick="this.parentElement.classList.remove('open')" style="color: var(--gold);">Call to Order</a>
+    <a href="tel:2032690826" style="color: var(--gold);">Call to Order</a>
   </div>
 
   <!-- ═══════ HERO ═══════ -->
@@ -1225,7 +1155,7 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           (203) 269-0826
         </a>
-        <a href="https://www.clover.com/online-ordering/little-charm-eatery" target="_blank" rel="noopener" class="btn-secondary">
+        <a href="menu.html" class="btn-secondary">
           View Full Menu
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
@@ -1354,7 +1284,7 @@
           <p class="section-label">What We're Known For</p>
           <h2 class="section-heading">Guest Favorites</h2>
         </div>
-        <a href="https://www.clover.com/online-ordering/little-charm-eatery" target="_blank" rel="noopener" class="btn-secondary" style="padding: 12px 24px;">
+        <a href="menu.html" class="btn-secondary" style="padding: 12px 24px;">
           Full Menu
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>

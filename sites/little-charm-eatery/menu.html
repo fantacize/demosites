@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Little Charm Eatery</title>
+  <meta name="description" content="Full menu for Little Charm Eatery. Fresh Thai cuisine, ramen, pho, curries, stir-fry, and more in Wallingford, CT.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0A0908;
+      --surface: #131110;
+      --surface-2: #1C1916;
+      --surface-3: #242019;
+      --gold: #C9A96E;
+      --gold-bright: #E8D5A3;
+      --gold-dim: #8B7748;
+      --text: #F5F0E8;
+      --text-muted: #9B958C;
+      --text-dim: #6B665F;
+      --serif: 'Cormorant Garamond', 'Georgia', serif;
+      --sans: 'Outfit', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* ═══ NAV ═══ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 clamp(20px, 4vw, 48px);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 9, 8, 0.95);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.06);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      color: var(--gold-bright);
+      text-decoration: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-back {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 400;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 22px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 4px;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .nav-cta:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--bg);
+      box-shadow: 0 0 24px rgba(201, 169, 110, 0.2);
+    }
+
+    /* ═══ HERO ═══ */
+    .menu-hero {
+      padding: clamp(100px, 12vw, 140px) clamp(20px, 4vw, 48px) clamp(40px, 6vw, 64px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(201, 169, 110, 0.04), transparent 70%);
+      pointer-events: none;
+    }
+
+    .menu-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(44px, 7vw, 80px);
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .menu-hero h1 em {
+      font-style: italic;
+      color: var(--gold-bright);
+    }
+
+    .menu-hero p {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-muted);
+      position: relative;
+    }
+
+    .menu-hero .protein-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: var(--surface);
+      border: 1px solid rgba(201, 169, 110, 0.08);
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-dim);
+      position: relative;
+    }
+    .menu-hero .protein-note strong { color: var(--gold); font-weight: 500; }
+
+    /* ═══ CATEGORY NAV ═══ */
+    .cat-nav {
+      position: sticky;
+      top: 64px;
+      z-index: 50;
+      background: rgba(10, 9, 8, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.06);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .cat-nav::-webkit-scrollbar { display: none; }
+
+    .cat-nav-inner {
+      display: flex;
+      gap: 4px;
+      padding: 8px clamp(20px, 4vw, 48px);
+      max-width: 1200px;
+      margin: 0 auto;
+      width: max-content;
+      min-width: 100%;
+      justify-content: center;
+    }
+
+    .cat-nav a {
+      flex-shrink: 0;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: all 0.25s;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .cat-nav a:hover {
+      color: var(--gold);
+      background: rgba(201, 169, 110, 0.06);
+    }
+    .cat-nav a.active {
+      color: var(--gold);
+      background: rgba(201, 169, 110, 0.1);
+    }
+
+    /* ═══ MENU CONTENT ═══ */
+    .menu-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 48px) clamp(64px, 8vw, 100px);
+    }
+
+    .menu-category {
+      padding-top: clamp(48px, 6vw, 72px);
+      scroll-margin-top: 120px;
+    }
+
+    .cat-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .cat-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 300;
+      color: var(--text);
+    }
+
+    .cat-header .cat-count {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+
+    .cat-header .cat-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(201, 169, 110, 0.1), transparent);
+    }
+
+    /* ═══ MENU ITEMS ═══ */
+    .menu-items {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 6px;
+      transition: background 0.25s;
+      cursor: default;
+    }
+
+    .menu-item:hover {
+      background: rgba(201, 169, 110, 0.03);
+    }
+
+    .item-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .item-name {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .item-tags {
+      display: flex;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .item-tag {
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .tag-v {
+      background: rgba(110, 170, 110, 0.12);
+      color: #7DB87D;
+    }
+
+    .tag-gf {
+      background: rgba(170, 140, 110, 0.12);
+      color: var(--gold);
+    }
+
+    .tag-spicy {
+      background: rgba(180, 80, 60, 0.12);
+      color: #C67A6A;
+    }
+
+    .tag-new {
+      background: rgba(201, 169, 110, 0.15);
+      color: var(--gold-bright);
+    }
+
+    .item-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-dim);
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    .item-price {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gold);
+      white-space: nowrap;
+      align-self: start;
+      padding-top: 2px;
+    }
+
+    .item-price .from {
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    .item-unavailable {
+      color: var(--text-dim);
+      font-style: italic;
+      font-size: 13px;
+    }
+
+    /* ═══ PROTEIN GRID ═══ */
+    .protein-options {
+      margin-top: 8px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .protein-pill {
+      padding: 3px 10px;
+      border: 1px solid rgba(201, 169, 110, 0.1);
+      border-radius: 3px;
+      font-size: 11px;
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+
+    /* ═══ CTA BAND ═══ */
+    .cta-band {
+      background: var(--surface);
+      padding: clamp(56px, 8vw, 80px) clamp(20px, 4vw, 48px);
+      text-align: center;
+      border-top: 1px solid rgba(201, 169, 110, 0.04);
+    }
+
+    .cta-band h2 {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .cta-band p {
+      font-size: 15px;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 34px;
+      background: var(--gold);
+      color: var(--bg);
+      border: none;
+      border-radius: 4px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: var(--gold-bright);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 32px rgba(201, 169, 110, 0.25);
+    }
+
+    /* ═══ FOOTER ═══ */
+    footer {
+      background: var(--bg);
+      padding: 32px clamp(20px, 4vw, 48px);
+      border-top: 1px solid rgba(201, 169, 110, 0.06);
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .footer-tagline {
+      font-family: var(--serif);
+      font-size: 14px;
+      color: var(--text-dim);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 640px) {
+      .cat-nav-inner { justify-content: flex-start; }
+      .menu-item { grid-template-columns: 1fr; gap: 6px; }
+      .item-price { justify-self: start; }
+      .nav-back span { display: none; }
+      .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition-duration: 0.01ms !important; }
+    }
+
+    /* ═══ SCROLL REVEAL ═══ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Little Charm</a>
+    <div class="nav-right">
+      <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>Back to Home</span>
+      </a>
+      <a href="tel:2032690826" class="nav-cta">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Order Now
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="menu-hero">
+    <h1>Our <em>Menu</em></h1>
+    <p>Fresh Thai cuisine made to order. Dine-in, takeout, or delivery.</p>
+    <div class="protein-note">
+      <strong>Choose your protein</strong> on select dishes: Chicken, Beef, Shrimp, Tofu, or Veggie
+    </div>
+  </header>
+
+  <!-- CATEGORY NAV -->
+  <div class="cat-nav" id="catNav">
+    <div class="cat-nav-inner">
+      <a href="#appetizers">Appetizers</a>
+      <a href="#soups">Soups</a>
+      <a href="#ramen">Ramen</a>
+      <a href="#pho">Pho</a>
+      <a href="#noodles">Noodles</a>
+      <a href="#fried-rice">Fried Rice</a>
+      <a href="#street-food">Street Food</a>
+      <a href="#stir-fry">Stir Fry</a>
+      <a href="#curry">Curry</a>
+      <a href="#signature">Signature</a>
+      <a href="#branzino">Branzino</a>
+      <a href="#vegetarian">Vegetarian</a>
+      <a href="#lunch">Lunch</a>
+      <a href="#sides">Sides</a>
+      <a href="#dessert">Dessert</a>
+      <a href="#drinks">Drinks</a>
+    </div>
+  </div>
+
+  <!-- MENU -->
+  <main class="menu-content">
+
+    <!-- APPETIZERS -->
+    <section class="menu-category reveal" id="appetizers">
+      <div class="cat-header">
+        <h2>Appetizers</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Chicken Satay</span>
+              <span class="item-tags"><span class="item-tag tag-gf">GF</span></span>
+            </div>
+            <p class="item-desc">Grilled Thai chicken skewers served with peanut sauce</p>
+          </div>
+          <span class="item-price">$10</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Fresh Summer Roll</span>
+              <span class="item-tags"><span class="item-tag tag-v">V</span></span>
+            </div>
+            <p class="item-desc">Fresh lettuce, carrot, cucumber, basil, and rice noodles wrapped in rice paper. Served with peanut hoisin sauce</p>
+          </div>
+          <span class="item-price">$8</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Crispy Spring Roll</span>
+              <span class="item-tags"><span class="item-tag tag-v">V</span></span>
+            </div>
+            <p class="item-desc">Crispy Thai style vegetable spring roll served with sweet and sour sauce</p>
+          </div>
+          <span class="item-price">$8</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">Crab Rangoon</span></div>
+            <p class="item-desc">Jumbo lump crabmeat fried rice with scallion, onion, and egg</p>
+          </div>
+          <span class="item-price">$9</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">Pork Dumpling</span></div>
+            <p class="item-desc">Steamed/Pan-fried dumplings filled with marinated pork, vegetables, and garnished with crispy garlic. Served with ginger sauce</p>
+          </div>
+          <span class="item-price">$9</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Vegetable Gyoza</span>
+              <span class="item-tags"><span class="item-tag tag-v">V</span></span>
+            </div>
+            <p class="item-desc">Pan-fried vegetable dumpling, scallion, and crispy garlic, served with ginger sauce</p>
+          </div>
+          <span class="item-price">$9</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Edamame</span>
+              <span class="item-tags"><span class="item-tag tag-v">V</span><span class="item-tag tag-gf">GF</span></span>
+            </div>
+            <p class="item-desc">Steamed fresh soybeans tossed with sea salt</p>
+          </div>
+          <span class="item-price">$7</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Fried Brussels Sprouts</span>
+              <span class="item-tags"><span class="item-tag tag-v">V</span></span>
+            </div>
+            <p class="item-desc">Fried and seasoned brussels sprouts</p>
+          </div>
+          <span class="item-price">$9</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Scallion Pancake</span>
+              <span class="item-tags"><span class="item-tag tag-v">V</span></span>
+            </div>
+            <p class="item-desc">Crispy Asian-style scallion pancake. Served with ginger sauce</p>
+          </div>
+          <span class="item-price">$9</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">Fried Calamari</span></div>
+            <p class="item-desc">Tender fresh squid, lightly battered and deep-fried to golden perfection. Served with house-made spicy mayo</p>
+          </div>
+          <span class="item-price">$11</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">Crispy Sweet Chili Wings</span></div>
+            <p class="item-desc">Fried chicken wings tossed in a mouthwatering sweet and chilli sauce</p>
+          </div>
+          <span class="item-price">$11</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">Coconut Shrimp</span></div>
+            <p class="item-desc">Shrimp crusted with coconut flakes, deep fried until golden brown, served with sweet and sour sauce</p>
+          </div>
+          <span class="item-price">$12</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Crazy Roll</span>
+              <span class="item-tags"><span class="item-tag tag-gf">GF</span></span>
+            </div>
+            <p class="item-desc">Marinated ground pork with glass noodles, carrots, cabbage, and black pepper, fried until crispy. Served with sweet and sour sauce</p>
+          </div>
+          <span class="item-price">$12</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">Bao Buns</span></div>
+            <p class="item-desc">Asian inspired fluffy buns, come with hoisin, spicy mayo, carrot, and cucumber</p>
+          </div>
+          <span class="item-price"><span class="from">from</span>$12</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOUPS -->
+    <section class="menu-category reveal" id="soups">
+      <div class="cat-header">
+        <h2>Soups</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Tom Yum</span>
+              <span class="item-tags"><span class="item-tag tag-gf">GF</span><span class="item-tag tag-spicy">Spicy</span></span>
+            </div>
+            <p class="item-desc">Thai hot and sour soup flavored with lemongrass, kaffir lime leaves, lime juice, tomatoes, mushrooms, scallion, and chili paste</p>
+          </div>
+          <span class="item-price"><span class="from">from</span>$13</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Tom Kha</span>
+              <span class="item-tags"><span class="item-tag tag-gf">GF</span></span>
+            </div>
+            <p class="item-desc">Coconut-galangal broth, mushrooms, tomatoes, and scallion</p>
+          </div>
+          <span class="item-price"><span class="from">from</span>$13</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">Wonton Soup</span></div>
+          </div>
+          <span class="item-price"><span class="from">from</span>$10</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SALAD -->
+    <section class="menu-category reveal" id="salads">
+      <div class="cat-header">
+        <h2>Salad</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">House Salad</span></div>
+            <p class="item-desc">Avocado, lettuce, carrot, red onion, tomatoes, cucumber with your choice of ginger or peanut dressing</p>
+          </div>
+          <span class="item-price">$9</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Papaya Salad</span>
+              <span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span>
+            </div>
+            <p class="item-desc">Fresh green papaya, green beans, carrots, tomatoes, and peanut seasoned in spicy lime sauce served with lettuce</p>
+          </div>
+          <span class="item-price">$11</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RAMEN -->
+    <section class="menu-category reveal" id="ramen">
+      <div class="cat-header">
+        <h2>Ramen</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">Tonkatsu Ramen</span></div>
+            <p class="item-desc">Hakata style 18-hour pork broth, corn, pork cha-shu, wakame, egg, bamboo shoots, nori, and scallion</p>
+          </div>
+          <span class="item-price">$15</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Spicy Miso</span>
+              <span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span>
+            </div>
+            <p class="item-desc">Red miso, pork cha-shu, egg, corn, bamboo shoot, scallion, nori, and chili oil</p>
+          </div>
+          <span class="item-price">$15</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">Tempura Udon</span></div>
+            <p class="item-desc">Shrimp tempura, bamboo shoots, egg, corn, nori, scallion, and wakame</p>
+          </div>
+          <span class="item-price">$15</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">Shoyu Chicken</span></div>
+            <p class="item-desc">Grilled chicken, egg, bamboo shoots, corn, wakame, scallion, and nori</p>
+          </div>
+          <span class="item-price">$15</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header"><span class="item-name">Shoyu Beef</span></div>
+            <p class="item-desc">Grilled skirt steak, bamboo shoots, nori, egg, scallion, corn, wakame</p>
+          </div>
+          <span class="item-price">$25</span>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="item-header">
+              <span class="item-name">Vegetable Miso Ramen</span>
+              <span class="item-tags"><span class="item-tag tag-v">V</span></span>
+            </div>
+          </div>
+          <span class="item-price">$15</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHO -->
+    <section class="menu-category reveal" id="pho">
+      <div class="cat-header">
+        <h2>Pho</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Pho Ga</span></div><p class="item-desc">Sliced chicken with aromatic chicken broth</p></div><span class="item-price">$15</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Pho Tai</span></div><p class="item-desc">Rare beef slices with aromatic beef broth</p></div><span class="item-price">$16</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Pho Dac Biet</span></div><p class="item-desc">Rare beef, beef meatballs, tendon, tripe</p></div><span class="item-price">$17</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Pho Strip Sizzle</span></div><p class="item-desc">8 oz. grilled marinated New York strip with aromatic beef broth</p></div><span class="item-price">$25</span></div>
+      </div>
+    </section>
+
+    <!-- STIR-FRIED NOODLES -->
+    <section class="menu-category reveal" id="noodles">
+      <div class="cat-header">
+        <h2>Stir-Fried Noodles</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Pad Thai</span></div><p class="item-desc">Rice noodles with egg, bean sprouts, scallions, and peanuts in Pad Thai sauce</p></div><span class="item-price"><span class="from">from</span>$15</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Spicy Pad Thai</span><span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Rice noodles with egg, onions, bell peppers, scallions, and basil leaves in our secret sauce</p></div><span class="item-price"><span class="from">from</span>$15</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Drunken Noodle</span><span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Flat rice noodles with chili, egg, bell peppers, broccoli, carrot, onion, and basil in spicy basil sauce</p></div><span class="item-price"><span class="from">from</span>$15</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Pad See Ew</span></div><p class="item-desc">Stir-fried wide rice noodles with egg, broccoli, and carrots in sweet soy sauce</p></div><span class="item-price"><span class="from">from</span>$15</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Thai Lo Mein</span></div><p class="item-desc">Stir-fried lo mein noodles in sesame oil sauce with broccoli, snow peas, carrots, and scallions</p></div><span class="item-price"><span class="from">from</span>$15</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Spicy Lo Mein</span><span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Stir-fried lo mein noodles in chili sauce with onions, bell peppers, carrots, and basil leaves</p></div><span class="item-price"><span class="from">from</span>$15</span></div>
+      </div>
+    </section>
+
+    <!-- FRIED RICE -->
+    <section class="menu-category reveal" id="fried-rice">
+      <div class="cat-header">
+        <h2>Fried Rice</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Thai Fried Rice</span></div><p class="item-desc">Stir-fried jasmine rice with egg, onion, carrots, and scallions</p></div><span class="item-price"><span class="from">from</span>$14</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Basil Fried Rice</span><span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Stir-fried jasmine rice with egg, onion, bell pepper, carrots, basil leaves, and fresh hot chili pepper</p></div><span class="item-price"><span class="from">from</span>$14</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Pineapple Fried Rice</span></div><p class="item-desc">Stir-fried jasmine rice with pineapple chunks, carrots, onions, cashew nuts, raisins, and egg in curry powder</p></div><span class="item-price"><span class="from">from</span>$14</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Crab Fried Rice</span></div><p class="item-desc">Jumbo lump crabmeat fried rice with scallion, onion, and egg</p></div><span class="item-price">$25</span></div>
+      </div>
+    </section>
+
+    <!-- FAMOUS THAI STREET FOOD -->
+    <section class="menu-category reveal" id="street-food">
+      <div class="cat-header">
+        <h2>Famous Thai Street Food</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Kra-pow Kai Dow</span><span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Minced chicken, chili, and basil topped with fried egg</p></div><span class="item-price">$17</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Moo Grob Basil Kai Dow</span><span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Crispy pork belly with chili, basil topped with fried egg</p></div><span class="item-price">$21</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Khao Soi Chicken</span></div><p class="item-desc">Northern Thai curry over egg noodles. Served with chicken, lime, shallots, red onion, Thai chili, and crispy yellow noodles</p></div><span class="item-price"><span class="from">from</span>$16</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">BBQ Pork with Sticky Rice</span></div><p class="item-desc">Thai style grilled pork loin. Served with sticky rice and Thai tamarind dipping sauce</p></div><span class="item-price">$19</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Crying Tiger</span><span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Thai style grilled steak with spicy chili sauce served with sticky rice</p></div><span class="item-price">$22</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Mama Tom Yum Hot Pot</span><span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Mama Thai's favorite instant noodles in Tom Yum broth with lemongrass, galangal, and cilantro. Topped with shrimp, mussels, squids, imitation crab sticks, and scallion</p></div><span class="item-price">$25</span></div>
+      </div>
+    </section>
+
+    <!-- STIR FRY ENTREE -->
+    <section class="menu-category reveal" id="stir-fry">
+      <div class="cat-header">
+        <h2>Stir Fry Entrees</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Thai Chicken Basil (Pad Kra Pao)</span><span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Thai-style stir fried with onion, bell peppers, green bean, carrot, garlic, and basil leaves. Served with fried egg</p></div><span class="item-price"><span class="from">from</span>$16</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Thai Style Grilled Steak Basil</span><span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Rice topped with stir-fried grilled steak, onion, bell pepper, green bean, carrot, and basil. Served with fried egg</p></div><span class="item-price"><span class="from">from</span>$22</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Crispy Chicken Cashew Nut</span></div><p class="item-desc">Cashew nut, onions, bell pepper, pineapple, carrot, and scallion sauteed in Prik Pao sauce</p></div><span class="item-price"><span class="from">from</span>$16</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Chicken Pineapple</span></div><p class="item-desc">Sauteed chicken with pineapple, snow peas, onions, broccoli, carrot, and scallions in brown sauce</p></div><span class="item-price"><span class="from">from</span>$16</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Triple Delight</span></div><p class="item-desc">Chicken, shrimp, and beef sauteed with fresh ginger broccoli, onions, bell peppers, mushroom, and scallions in brown sauce</p></div><span class="item-price"><span class="from">from</span>$20</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Scallops &amp; Shrimp in the Garden</span></div><p class="item-desc">Scallops and shrimp sauteed with fresh ginger, broccoli, onions, bell peppers, mushroom, and scallions in special brown sauce</p></div><span class="item-price"><span class="from">from</span>$22</span></div>
+      </div>
+    </section>
+
+    <!-- CURRY -->
+    <section class="menu-category reveal" id="curry">
+      <div class="cat-header">
+        <h2>Curry Dishes</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Yellow Curry</span></div><p class="item-desc">Pineapple chunks, potatoes, carrots, onions, and snow peas</p></div><span class="item-price"><span class="from">from</span>$15</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Peanut Curry</span></div><p class="item-desc">Broccoli, carrots, bell pepper, bamboo shoot, and basil leaves in peanut curry</p></div><span class="item-price"><span class="from">from</span>$15</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Mango Curry</span></div><p class="item-desc">Yellow curry, bell pepper, carrot, tomatoes, and mango cubes</p></div><span class="item-price"><span class="from">from</span>$15</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Avocado Curry</span></div><p class="item-desc">Red curry, chicken, shrimp, broccoli, bell pepper, carrot, and avocado topped with coconut sauce</p></div><span class="item-price">$21</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Grilled Skirt Steak Panang Curry</span></div><p class="item-desc">Grilled skirt steak, broccoli, bell pepper, basil, carrots, and green bean topped with coconut sauce</p></div><span class="item-price">$27</span></div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE -->
+    <section class="menu-category reveal" id="signature">
+      <div class="cat-header">
+        <h2>Little Charm Signature</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Thai General Gao Chicken</span></div><p class="item-desc">Battered chicken with ginger sweet chili sauce, and a side of steamed carrot and broccoli</p></div><span class="item-price">$17</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Mango Crispy Chicken</span></div><p class="item-desc">Battered chicken sauteed with mango, snow peas, and onion with sweet chili sauce</p></div><span class="item-price">$17</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Beef Teriyaki</span></div><p class="item-desc">Stir-fried beef in teriyaki sauce served with broccoli and carrots topped with sesame seeds</p></div><span class="item-price"><span class="from">from</span>$18</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Spicy Duck</span><span class="item-tags"><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Crispy duck with sweet chili sauce, onion, mushroom, carrot, bell pepper, and basil leaves</p></div><span class="item-price">$27</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Roasted Duck Curry</span></div><p class="item-desc">Boneless roasted duck in red chili paste, tossed with bell peppers, tomatoes, and pineapple slices sprinkled with basil leaves</p></div><span class="item-price">$27</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Ginger Crispy Duck</span></div><p class="item-desc">Crispy duck topped with fresh ginger, broccoli, onions, bell peppers, mushroom, and scallions in ginger sauce</p></div><span class="item-price">$27</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Salmon &amp; Shrimp Choo Chee</span></div><p class="item-desc">Salmon filet, shrimp, bell pepper in Choo Chee curry sauce, served with blanched broccoli and carrot</p></div><span class="item-price">$26</span></div>
+      </div>
+    </section>
+
+    <!-- BRANZINO -->
+    <section class="menu-category reveal" id="branzino">
+      <div class="cat-header">
+        <h2>Branzino</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Branzino Ginger</span></div><p class="item-desc">Pan seared Mediterranean sea bass topped with fresh ginger, onions, bell peppers, mushroom, and scallions in ginger sauce</p></div><span class="item-price">$30</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Branzino Curry</span></div><p class="item-desc">Pan seared Mediterranean sea bass in red curry sauce with broccoli and bell pepper, sprinkled with basil leaves</p></div><span class="item-price">$30</span></div>
+      </div>
+    </section>
+
+    <!-- VEGETARIAN -->
+    <section class="menu-category reveal" id="vegetarian">
+      <div class="cat-header">
+        <h2>Signature Vegetarian</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Jay Pad Thai</span><span class="item-tags"><span class="item-tag tag-v">V</span></span></div><p class="item-desc">Classic wok-fried rice noodles with egg, bean sprouts, peanuts, and scallion in Pad Thai sauce</p></div><span class="item-price"><span class="from">from</span>$14</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Jay Drunken Noodle</span><span class="item-tags"><span class="item-tag tag-v">V</span><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Spicy wok-fried wide rice noodles with egg, bell peppers, broccoli, onion, and fresh chili in basil sauce</p></div><span class="item-price"><span class="from">from</span>$14</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Jay Pad See Ew</span><span class="item-tags"><span class="item-tag tag-v">V</span></span></div><p class="item-desc">Stir-fried wide rice noodles with egg, broccoli, and carrot in sweet soy sauce</p></div><span class="item-price"><span class="from">from</span>$14</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Jay Fried Rice</span><span class="item-tags"><span class="item-tag tag-v">V</span></span></div><p class="item-desc">Fried rice with pineapple, egg, onions, carrots, tomatoes, and scallions in brown sauce</p></div><span class="item-price"><span class="from">from</span>$14</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Jay Vegetable Lover</span><span class="item-tags"><span class="item-tag tag-v">V</span></span></div><p class="item-desc">Stir-fried snow peas, broccoli, onions, bell peppers, green beans, mushrooms, and scallions in vegetarian sauce</p></div><span class="item-price"><span class="from">from</span>$14</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Jay Curry</span><span class="item-tags"><span class="item-tag tag-v">V</span></span></div><p class="item-desc">Broccoli, bell pepper, carrot, green beans, and bamboo. Served with jasmine berry rice</p></div><span class="item-price"><span class="from">from</span>$14</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Vegetarian Evil</span><span class="item-tags"><span class="item-tag tag-v">V</span><span class="item-tag tag-spicy">Spicy</span></span></div><p class="item-desc">Sauteed fried in chili sauce with onion, bell pepper, and scallions. Served with jasmine berry rice</p></div><span class="item-price"><span class="from">from</span>$14</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Jay Rama Garden</span><span class="item-tags"><span class="item-tag tag-v">V</span></span></div><p class="item-desc">Steamed broccoli, snow peas, carrots, green beans, napa, cashew nut, and topped with peanut sauce</p></div><span class="item-price"><span class="from">from</span>$14</span></div>
+      </div>
+    </section>
+
+    <!-- LUNCH SPECIALS -->
+    <section class="menu-category reveal" id="lunch">
+      <div class="cat-header">
+        <h2>Lunch Specials</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Pad Thai</span></div></div><span class="item-price"><span class="from">from</span>$13</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Drunken Noodle</span></div></div><span class="item-price"><span class="from">from</span>$13</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Pad See Ew</span></div></div><span class="item-price"><span class="from">from</span>$13</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Thai Fried Rice</span></div></div><span class="item-price"><span class="from">from</span>$13</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Basil Fried Rice</span></div></div><span class="item-price"><span class="from">from</span>$13</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Hot Basil</span></div></div><span class="item-price"><span class="from">from</span>$13</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Chicken Pineapple</span></div></div><span class="item-price"><span class="from">from</span>$13</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Panang Curry</span></div></div><span class="item-price"><span class="from">from</span>$13</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Peanut Curry</span></div></div><span class="item-price"><span class="from">from</span>$13</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Mango Curry</span></div></div><span class="item-price">$14.95</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Crispy Chicken Cashew Nut</span></div></div><span class="item-price">$14.95</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Lunch Thai General Gao Chicken</span></div></div><span class="item-price">$14.95</span></div>
+      </div>
+    </section>
+
+    <!-- SIDES -->
+    <section class="menu-category reveal" id="sides">
+      <div class="cat-header">
+        <h2>Side Orders</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><span class="item-name">Jasmine Rice</span></div><span class="item-price">$2</span></div>
+        <div class="menu-item"><div><span class="item-name">Berry Rice</span></div><span class="item-price">$2.50</span></div>
+        <div class="menu-item"><div><span class="item-name">Sticky Rice</span></div><span class="item-price">$2.50</span></div>
+        <div class="menu-item"><div><span class="item-name">Sweet Coconut Sticky Rice</span></div><span class="item-price">$4.50</span></div>
+        <div class="menu-item"><div><span class="item-name">Egg Fried Rice</span></div><span class="item-price">$6.50</span></div>
+        <div class="menu-item"><div><span class="item-name">Peanut Sauce</span></div><span class="item-price">$2.50</span></div>
+        <div class="menu-item"><div><span class="item-name">Ginger Dressing</span></div><span class="item-price">$2.50</span></div>
+        <div class="menu-item"><div><span class="item-name">Sweet and Sour Sauce</span></div><span class="item-price">$2</span></div>
+        <div class="menu-item"><div><span class="item-name">Steamed Vegetable</span></div><span class="item-price">$5</span></div>
+        <div class="menu-item"><div><span class="item-name">Steamed Rice Noodle</span></div><span class="item-price">$4</span></div>
+        <div class="menu-item"><div><span class="item-name">Side String Beans, Glazed Soy</span></div><span class="item-price">$6.50</span></div>
+      </div>
+    </section>
+
+    <!-- DESSERT -->
+    <section class="menu-category reveal" id="dessert">
+      <div class="cat-header">
+        <h2>Dessert</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Mango Sticky Rice</span></div></div><span class="item-price">$10</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">i-Tim Kaati</span></div><p class="item-desc">Sandwich coconut ice cream from ice cream cart to table. Sweet coconut ice cream on top of sweet sticky rice between soft bread and topped with roasted peanuts</p></div><span class="item-price">$11</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Coconut Ice Cream</span></div></div><span class="item-price">$7</span></div>
+        <div class="menu-item"><div><div class="item-header"><span class="item-name">Fried Ice Cream (Vanilla)</span></div></div><span class="item-price">$9</span></div>
+      </div>
+    </section>
+
+    <!-- BEVERAGES -->
+    <section class="menu-category reveal" id="drinks">
+      <div class="cat-header">
+        <h2>Beverages</h2>
+        <span class="cat-line"></span>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><div><span class="item-name">Thai Iced Tea</span></div><span class="item-price">$4.95</span></div>
+        <div class="menu-item"><div><span class="item-name">Thai Iced Coffee</span></div><span class="item-price">$4.95</span></div>
+        <div class="menu-item"><div><span class="item-name">Bubble Tea</span></div><span class="item-price">$5.95</span></div>
+        <div class="menu-item"><div><span class="item-name">Shirley Temple</span></div><span class="item-price">$4.50</span></div>
+        <div class="menu-item"><div><span class="item-name">Soda</span></div><span class="item-price">$3.50</span></div>
+        <div class="menu-item"><div><span class="item-name">Unsweetened Iced Tea</span></div><span class="item-price">$3</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <h2>Ready to Order?</h2>
+    <p>Call us for dine-in, takeout, or order online.</p>
+    <a href="tel:2032690826" class="btn-primary">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call (203) 269-0826
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Little Charm Eatery &middot; 900 N Colony Rd, Wallingford CT</p>
+      <p class="footer-tagline">Fresh Thai Cuisine with a Modern Touch</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+
+    // Active category tracking
+    var catLinks = document.querySelectorAll('.cat-nav a');
+    var categories = document.querySelectorAll('.menu-category');
+
+    var catObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          catLinks.forEach(function(link) {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+          // Scroll the active link into view in the cat nav
+          var activeLink = document.querySelector('.cat-nav a.active');
+          if (activeLink) {
+            activeLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          }
+        }
+      });
+    }, { threshold: 0, rootMargin: '-120px 0px -60% 0px' });
+
+    categories.forEach(function(cat) { catObserver.observe(cat); });
+  </script>
+
+</body>
+</html>
